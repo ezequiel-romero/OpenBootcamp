@@ -1,15 +1,15 @@
-a span::after {
-    content: 'Pasa por encima';
-}
 button {
     padding: 15px;
-    font-size: larger;
     cursor: pointer;
+    width: 150px;
 }
 button:hover {
-    color: #fff;
-    background-color: #008500;
+    background-color: green;
+    color: white;
 }
-a:visited span::after {
-    content: '¡Hecho!';
+button::before {
+    content: "Pasa por encima"
+}
+button:hover::before {
+    content: "¡Hecho!"
 }
