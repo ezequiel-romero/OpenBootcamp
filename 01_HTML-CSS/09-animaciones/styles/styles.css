@@ -17,7 +17,7 @@ body {
     cursor: pointer;
     background-color: #CEE5D0;
     color: #666;
-    transition: all 400ms;
+    transition: transform 400ms;
 }
 
 .btn-modern:hover {
@@ -25,5 +25,6 @@ body {
     background-color: #94B49F;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     color: #333;
+    transition: all 400ms;
 }
 
