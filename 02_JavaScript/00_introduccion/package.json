@@ -1,0 +1,21 @@
+{
+  "name": "introduccion-javascript",
+  "version": "1.0.0",
+  "description": "Este es mi primero proyecto de JavaScript con Node en OpenBootcamp",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ezequiel-romero/OpenBootcamp/02_JavaScript/00_introduccion"
+  },
+  "keywords": [
+    "Node.js",
+    "JavaScript",
+    "OpenBootcamp"
+  ],
+  "author": "Ezequiel Romero",
+  "license": "ISC"
+}
