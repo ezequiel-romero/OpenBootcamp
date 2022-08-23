@@ -2,7 +2,7 @@
 let valor = 10
 
 for (let i = valor - 1; i >= 1; i--) {
-    valor = valor * i
+    valor *= i
 }
 
 console.log(valor)
