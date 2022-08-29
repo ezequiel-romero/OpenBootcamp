@@ -2,3 +2,4 @@ resources/*
 *.DS_Store
 02_JavaScript/12_eslint/node_modules/*
 02_JavaScript/13_eventos/node_modules/*
+02_JavaScript/14_datos/node_modules/*
