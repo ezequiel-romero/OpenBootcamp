@@ -38,7 +38,7 @@ sections.forEach(section => {
 
 trashSection.addEventListener("dragover", event => {
     event.preventDefault()
-    event.dataTransfer.dropEffect = "move" 
+    event.dataTransfer.dropEffect = "move"
     trashHover("in")
 })
 trashSection.addEventListener("dragleave", event => {
