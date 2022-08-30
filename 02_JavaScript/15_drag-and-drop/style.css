@@ -1,0 +1,64 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #264653;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 2rem;
+    border-radius: 1rem;
+    gap: 20px;
+}
+
+.section {
+    background-color: #FCBF49;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    width: 90%;
+}
+
+.item {
+    background-color: #e85d04;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.item.dragging {
+    opacity: 0.3;
+}
+
+.trashSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    background-color: #FCBF49;
+    border-radius: 10rem;
+}
+
+.trashSection.hover {
+    background-color: #e85d04;
+}
+
+.trash {
+    fill:#e85d04
+}
