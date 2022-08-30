@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPooVDugUeWbZhnH8Th-lHf-GPz82eVos&callback=initMap&v=weekly"
+    defer
+></script>
+<script>
+    let map;
+    //Bariloche, Yosemite, Costa Bonita
+    const myMarkers = [{ lat: -41.1351086, lng: -71.3105743 }, { lat: 37.7453678, lng: -119.5933472 }, { lat: -38.5623872, lng: -58.6265076 }]
+        
+    function setMarker(position) {
+        const marker = new google.maps.Marker({
+            position,
+            map,
+        });
+    }
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 3.450975, lng: -76.537955 },
+            zoom: 3,
+        });
+        myMarkers.forEach(marker => {
+            setMarker(marker)
+        })
+        
+    }
+
+    window.initMap = initMap;
+</script>
+</html>
