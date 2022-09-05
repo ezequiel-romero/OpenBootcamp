@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { ITask } from 'src/app/models/interfaces/Task.interface';
 
 @Component({
   selector: 'app-task',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
+  @Input() task: ITask | undefined;
+  @Output() delete: EventEmitter<ITask> = new EventEmitter<ITask>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteTask(){
+    //Notificamos al componente sup la tarea a eliminar
+    this.delete.emit(this.task); 
   }
 
 }

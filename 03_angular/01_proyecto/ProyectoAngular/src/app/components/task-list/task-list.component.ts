@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ITask, Levels } from 'src/app/models/interfaces/Task.interface';
 
 @Component({
   selector: 'app-task-list',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
+  task1: ITask = {
+    title: "Task 1",
+    description: "Description 1",
+    completed: false,
+    level: Levels.Info
+  }
+  task2: ITask = {
+    title: "Task 2",
+    description: "Description 2",
+    completed: true,
+    level: Levels.Urgent
+  }
+  task3: ITask = {
+    title: "Task 3",
+    description: "Description 3",
+    completed: false,
+    level: Levels.Blocking
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteTask(task: ITask) {
+    // TODO: Sustituir por un splice para eliminar de la lista de tareas
+    alert(`You're about to delete task: ${task.title}`)
   }
 
 }
