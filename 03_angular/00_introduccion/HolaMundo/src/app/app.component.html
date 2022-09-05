@@ -305,8 +305,14 @@
 
 <div class="content" role="main">
   
+  <!-- <p>Ingresa tu nombre!</p> -->
+  <!-- <input type="text" placeholder="User name" [(ngModel)]="nombre"> -->
   <!-- <h1>Hello {{ nombre }}, {{ title }} is running!</h1> -->
-  <app-saludo [nombre]="nombre" (mensajeEmitter)="recibirMensajeDelHijo($event)"></app-saludo>
+  <!-- <app-saludo [nombre]="nombre" (mensajeEmitter)="recibirMensajeDelHijo($event)"></app-saludo> -->
 
-  <input type="text" placeholder="User name" [(ngModel)]="nombre">
+  <!-- Ejemplo de uso de servicios -->
+  <!-- <app-lista-contactos></app-lista-contactos> -->
+
+  <!-- Ejemplo de peticion HTTP -->
+  <app-login-form></app-login-form>
 </div>

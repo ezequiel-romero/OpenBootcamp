@@ -1,0 +1,64 @@
+<p [ngStyle]="{color: 'tomato', fontWeight: 'bolder'}">Lista de elementos</p>
+
+<p ngClass="underlined">Iteración basica sobre una lista</p>
+
+<p [ngClass]="['underlined', 'font-smaller']">Aún no tienes elementos en la lista</p>
+
+<p [ngClass]="{underlined:false, 'font-smaller':true}">Aún no tienes elementos en la lista</p>
+
+<!-- BLOQUE DE DIRECTIVAS ESTRUCTURALES -->
+<button (click)="cambiarCargando()">
+    {{ cargando ? 'Terminar carga' : 'Iniciar carga' }}
+</button>
+
+<!-- <p *ngIf="cargando">
+    Cargando...
+</p> -->
+
+<ng-container *ngIf="!cargando; else templateEspera">
+    <p>Todo listo!</p>
+</ng-container>
+
+<ng-template #templateEspera>
+    <p>Cargando...</p>
+    <p>Espere a que termine el proceso</p>
+</ng-template>
+
+
+<!-- BLOQUE NG FOR -->
+<div style="margin-top: 50px;">
+    <div *ngFor="let producto of listElements; let i = index; let even = even">
+        <div [ngStyle]="even ? {backgroundColor:'lightgrey'} : {backgroundColor:'white'}">
+            {{ i + 1 }} - {{ producto.nombre }} - ${{ producto.precio }}
+            <span ngClass="font-smaller">{{ producto.descripcion }}</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- BLOQUE NG SWITCH -->
+<div style="margin-top: 50px;">
+    <input type="radio" name="option" (click)="escogerOpcion(0)" checked>Ninguna
+    <input type="radio" name="option" (click)="escogerOpcion(1)">Opción 1
+    <input type="radio" name="option" (click)="escogerOpcion(2)">Opción 2
+    <input type="radio" name="option" (click)="escogerOpcion(3)">Opción 3
+</div>
+
+<div [ngSwitch]="option">
+    <div [id]="1" *ngSwitchCase="1">Output 1</div>
+    <div [id]="2" *ngSwitchCase="2">Output 2</div>
+    <div [id]="3" *ngSwitchCase="3">Output 3</div>
+    <div *ngSwitchDefault></div>
+</div>
+
+
+<!-- Concatenar directivas -->
+<div style="margin-top: 50px;">
+    Productos myores a 10
+    <div *ngFor="let producto of listElements; let i = index; let even = even">
+        <div *ngIf="producto.precio > 10" [ngStyle]="even ? {backgroundColor:'lightgrey'} : {backgroundColor:'white'}">
+            {{ i + 1 }} - {{ producto.nombre }} - ${{ producto.precio }}
+            <span ngClass="font-smaller">{{ producto.descripcion }}</span>
+        </div>
+    </div>
+</div>
