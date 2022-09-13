@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -7,6 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SaludoComponent } from './components/saludo/saludo.component';
+
+// Locale para PIPES
+import { registerLocaleData } from '@angular/common';
+import localesAR from '@angular/common/locales/es-AR';
+registerLocaleData(localesAR) // Registramos el LOCALE_ID de 'es-AR' para poder usarlo con los pipes
 
 // Módulos Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -19,6 +24,9 @@ import { FormularioComponent } from './components/forms/formulario/formulario.co
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
 import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
 import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
+import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes.component';
+import { MultiplicaPipe } from './pipes/multiplica.pipe';
+import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,10 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     FormularioComponent,
     FormularioAnidadoComponent,
     FormularioArrayComponent,
-    FormularioValidadoComponent
+    FormularioValidadoComponent,
+    EjemploPipesComponent,
+    MultiplicaPipe,
+    CalcularPuntuacionPipe
   ],
   imports: [
     BrowserModule,
@@ -44,7 +55,12 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     // Importamos los modulos de Angular Material que usamos en los formularios
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    // Registramos el Locale de es-AR para que los PIPES salgan en español
+    {
+      provide: LOCALE_ID, useValue: 'es-AR'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
