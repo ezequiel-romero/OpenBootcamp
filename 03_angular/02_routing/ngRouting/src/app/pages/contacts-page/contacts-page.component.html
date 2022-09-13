@@ -1,7 +1,18 @@
 <h1>Contacts:</h1>
 
 <div *ngFor="let contact of contactList; let i = index">
-    <div routerLink="{{ contact.id }}">
-        <h5>{{ contact.firstName }}</h5>
+    <div routerLink="{{ contact.id }}" [state]="{data: contact, filter: genderFilter}">
+        <h3 class="contact">{{ contact.firstName }}</h3>
     </div>
+    <button (click)="backToHome(contact)">Select Invisible Friend</button>
 </div>
+
+<br><br>
+
+<div *ngIf="genderFilter == 'w' || genderFilter == 'm'">
+    <p>Showing {{ genderFilter }} friends</p>
+</div>
+
+<br><br>
+
+<a routerLink="/home">Back to home</a>

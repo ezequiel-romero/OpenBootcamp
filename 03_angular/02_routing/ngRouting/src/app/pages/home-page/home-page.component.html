@@ -1,7 +1,23 @@
-<h1>Home Page</h1>
+<h1>Invisible friend</h1>
 <h3>Welcome!</h3>
 
-<!-- Login -->
-<a routerLink="/login">Login</a>
 
-<button (click)="navigateToContacts()">View contacts</button>
+<ng-container *ngIf="selectedContact; else notSelected">
+    <h4 >Invisible friend selected: {{ selectedContact.firstName }}</h4>
+</ng-container>
+<ng-template #notSelected>
+    <div>
+        <p>Choose your invisible friend!</p>
+    </div>
+</ng-template>
+
+<!-- Login -->
+<a *ngIf="!token" routerLink="/login">Login</a>
+
+<button (click)="navigateToContacts()">View all your contacts</button>
+<br>
+<br>
+<div>
+    <p>Filters:</p>
+    <a [routerLink]="['/contacts']" [queryParams]="{genderFilter: 'w'}">Women</a> | <a [routerLink]="['/contacts']" [queryParams]="{genderFilter: 'm'}">Men</a>
+</div>

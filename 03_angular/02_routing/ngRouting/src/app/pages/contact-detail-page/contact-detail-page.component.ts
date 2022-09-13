@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IContact } from 'src/app/models/contact.interface';
 
 @Component({
   selector: 'app-contact-detail-page',
@@ -9,6 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactDetailPageComponent implements OnInit {
 
   id: any | undefined
+  contact: IContact = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    email: '',
+    gender: ''
+  }
+
+  previousFilter: string = 'all'
 
   constructor(private route: ActivatedRoute) { }
 
@@ -22,6 +32,16 @@ export class ContactDetailPageComponent implements OnInit {
         }
       }
     )
+
+
+    // Read contact parameter from URL
+    if(history.state.data) {
+      this.contact = history.state.data
+    }
+
+    if(history.state.filter) {
+      this.previousFilter = history.state.filter
+    }
     
   }
 

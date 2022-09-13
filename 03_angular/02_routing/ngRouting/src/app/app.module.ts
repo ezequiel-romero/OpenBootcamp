@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-detail-page.component';
 import { NavBarComponent } from './components/nav/nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { NavBarComponent } from './components/nav/nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
