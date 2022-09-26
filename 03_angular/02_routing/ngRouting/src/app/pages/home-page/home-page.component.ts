@@ -39,4 +39,8 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['contacts'], navigationExtras)
   }
 
+  navigateToRandomUser(): void {
+    this.router.navigate(['random-user'])
+  }
+
 }

@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Material card styles
+mat-card {
+    max-width: 450px;
+    margin: 2em auto;
+}
+mat-card-header {
+    display: unset;
+    text-align: center;
+}
+mat-card-content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+mat-form-field {
+    display: block;
+    min-width: 300px;
+    width: 100%;
+}

@@ -1,6 +1,6 @@
 <ng-container *ngIf="contact.email;else noContact">
     <h1>Contact: {{ id }}</h1>
-    <h2>Name: {{ contact.firstName }} {{ contact.lastName }}</h2>
+    <h2>Name: {{ contact | fullName }}</h2>
     <h3>Email: {{ contact.email }}</h3>
 </ng-container>
 <ng-template #noContact>

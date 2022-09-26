@@ -1,0 +1,39 @@
+<!-- Login form using Angular Material -->
+<mat-card>
+    <!-- Header -->
+    <mat-card-header>
+        <mat-card-title>
+            Login
+        </mat-card-title>
+        <mat-card-subtitle>
+            Sing in to your account
+        </mat-card-subtitle>
+    </mat-card-header>
+    
+    <!-- Content -->
+    <mat-card-content>
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (submit)="submitLogin()">
+            <!-- Email -->
+            <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
+                    Email field is mandatory
+                </mat-error>
+                <mat-error *ngIf="email?.errors?.['email'] && email?.touched">
+                    Email is incorrect
+                </mat-error>
+            </mat-form-field>
+            <!-- Password -->
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password">
+                <mat-error *ngIf="password?.errors?.['required'] && password?.touched">
+                    Password field is mandatory
+                </mat-error>
+            </mat-form-field>
+            <!-- Submit button -->
+            <button type="submit" mat-raised-button color="purple" [disabled]="loginForm.invalid">Submit</button>
+        </form>
+    </mat-card-content>
+
+</mat-card>

@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": { "title": "Mr", "first": "Konrad", "last": "Stornes" },
+      "location": {
+        "street": { "number": 1501, "name": "Bleikøya" },
+        "city": "Sylte",
+        "state": "Vestfold",
+        "country": "Norway",
+        "postcode": "1372",
+        "coordinates": { "latitude": "44.8529", "longitude": "-101.1110" },
+        "timezone": { "offset": "-9:00", "description": "Alaska" }
+      },
+      "email": "konrad.stornes@example.com",
+      "login": {
+        "uuid": "7c221df6-604e-4820-91a4-1dab532bc6d5",
+        "username": "redelephant177",
+        "password": "amanda",
+        "salt": "yas4GibM",
+        "md5": "8efd1fc90cc94148d5fd11f473ae04f4",
+        "sha1": "d092a7bddc6518c0802a8ad033b97cc9608467f2",
+        "sha256": "c7788281754384954c3d70e664d85cd1bacc16f801d9589d3bfdc6933a0afa12"
+      },
+      "dob": { "date": "1992-08-20T05:54:36.155Z", "age": 30 },
+      "registered": { "date": "2015-04-05T12:43:43.458Z", "age": 7 },
+      "phone": "32177483",
+      "cell": "48726416",
+      "id": { "name": "FN", "value": "20089224196" },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/69.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/69.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/69.jpg"
+      },
+      "nat": "NO"
+    }
+  ],
+  "info": {
+    "seed": "bb997adbb775c1fd",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
