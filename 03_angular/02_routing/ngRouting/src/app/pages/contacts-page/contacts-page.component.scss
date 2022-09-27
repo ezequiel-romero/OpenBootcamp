@@ -1,4 +1,26 @@
-.contact:hover {
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+.user:hover {
     color: blue;
     cursor: pointer;
+}
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.grid > div {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grid > div > img {
+    border-radius: 100px;
 }

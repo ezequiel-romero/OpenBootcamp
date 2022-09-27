@@ -1,18 +1,19 @@
-<h1>Contacts:</h1>
+<h1>Select your invisible friend:</h1>
 
-<div *ngFor="let contact of contactList; let i = index">
-    <div routerLink="{{ contact.id }}" [state]="{data: contact, filter: genderFilter}">
-        <h3 class="contact">{{ contact.firstName }}</h3>
+<div class="grid">
+    <div *ngFor="let user of randomUserList; let i = index">
+        <img src="{{ user.picture.thumbnail }}" alt="">
+        <div routerLink="{{ user.id.value }}" [state]="{data: user, filter: genderFilter}">
+            <h3 class="user">
+                {{ user.name.first }} {{ user.name.last }}
+            </h3>
+        </div>
+        <button mat-raised-button color="primary" (click)="backToHome(user)">Select</button>
     </div>
-    <button (click)="backToHome(contact)">Select Invisible Friend</button>
 </div>
 
-<br><br>
-
-<div *ngIf="genderFilter == 'w' || genderFilter == 'm'">
+<div *ngIf="genderFilter == 'female' || genderFilter == 'male'">
     <p>Showing {{ genderFilter }} friends</p>
 </div>
-
-<br><br>
 
 <a routerLink="/home">Back to home</a>

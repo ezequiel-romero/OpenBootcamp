@@ -1,7 +1,8 @@
-<ng-container *ngIf="contact.email;else noContact">
+<ng-container *ngIf="contact;else noContact">
     <h1>Contact: {{ id }}</h1>
-    <h2>Name: {{ contact | fullName }}</h2>
-    <h3>Email: {{ contact.email }}</h3>
+    <h2>{{ contact | fullName }}</h2>
+    <img src="{{ contact.picture.medium }}" alt="">
+    <h3>{{ contact.email }}</h3>
 </ng-container>
 <ng-template #noContact>
     <p>There was an issue</p>

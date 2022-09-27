@@ -3,7 +3,7 @@
 
 
 <ng-container *ngIf="selectedContact; else notSelected">
-    <h4 >Invisible friend selected: {{ selectedContact.firstName }}</h4>
+    <h4 >Invisible friend selected: {{ selectedContact.name.first }}</h4>
 </ng-container>
 <ng-template #notSelected>
     <div>
@@ -14,13 +14,12 @@
 <!-- Login -->
 <a *ngIf="!token" routerLink="/login">Login</a>
 
-<button (click)="navigateToContacts()">View all your contacts</button>
-<br>
-<br>
-<button (click)="navigateToRandomUser()">Generate random users</button>
+<button mat-raised-button color="primary" (click)="navigateToContacts()">View all your contacts</button>
+<!-- <button mat-raised-button color="primary" (click)="navigateToRandomUser()">Generate random users</button> -->
 <br>
 <br>
 <div>
     <p>Filters:</p>
-    <a [routerLink]="['/contacts']" [queryParams]="{genderFilter: 'w'}">Women</a> | <a [routerLink]="['/contacts']" [queryParams]="{genderFilter: 'm'}">Men</a>
+    <a [routerLink]="['/contacts']" [queryParams]="{genderFilter: 'female'}">Women</a> | 
+    <a [routerLink]="['/contacts']" [queryParams]="{genderFilter: 'male'}">Men</a>
 </div>

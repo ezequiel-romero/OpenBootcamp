@@ -28,16 +28,15 @@ export class RandomUserService {
     )
   }
   
-  getRandomUsers(n: number): Observable<Results[]>{
-    const options: HttpParams = new HttpParams().set("results", n)
-    return this.http.get<Results[]>('https://randomuser.me/api', {params: options}).pipe(
-      retry(2), // Retry number of petitions in case that something wrong happens
-      catchError(this.handleError)
-    )
-  }
-  
-  getRandomUsersByGender(gender: string): Observable<Results>{
-    const options: HttpParams = new HttpParams().set("gender", gender)
+  getRandomUsers(n: number, gender?: string): Observable<Results>{
+
+    let options: HttpParams = new HttpParams().set("results", n)
+
+    if (gender) {
+      options = options.append('gender', gender)
+    }
+    console.log(options, 'asdasdasdads');
+    
     return this.http.get<Results>('https://randomuser.me/api', {params: options}).pipe(
       retry(2), // Retry number of petitions in case that something wrong happens
       catchError(this.handleError)

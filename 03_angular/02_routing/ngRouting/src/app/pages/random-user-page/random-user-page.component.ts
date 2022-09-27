@@ -42,7 +42,7 @@ export class RandomUserPageComponent implements OnInit {
   getUserList(n: number) {
     this.randomUserService.getRandomUsers(n).subscribe(
       {
-        next: (response: Results[]) => {
+        next: (response: Results) => {
           console.log(response)
         },
         error: (error) => console.error(`${error}`),

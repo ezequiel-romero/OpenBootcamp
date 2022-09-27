@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { IContact } from 'src/app/models/contact.interface';
+import { IRandomUser } from 'src/app/models/randomuser';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +9,7 @@ import { IContact } from 'src/app/models/contact.interface';
 })
 export class HomePageComponent implements OnInit {
 
-  selectedContact: IContact | undefined
+  selectedContact: IRandomUser | undefined
   token: string | null = null
 
   constructor(private router: Router) { }
@@ -32,7 +32,7 @@ export class HomePageComponent implements OnInit {
 
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        gender: 'all'
+        genderFilter: 'all'
       }
     }
 
