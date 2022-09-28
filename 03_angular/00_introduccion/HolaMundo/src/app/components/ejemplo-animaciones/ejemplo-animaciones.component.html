@@ -1,0 +1,9 @@
+<div class="buttons">
+    <button mat-flat-button color="primary" (click)="izquierdaAnimacion()">Izquierda</button>
+    <button mat-flat-button color="accent" (click)="derechaAnimacion()">Derecha</button>
+    <button mat-flat-button color="warn" (click)="rotarAnimacion()">Rotar</button>
+</div>
+
+<div [@animaciones]="state" class="box">
+    <p>Ejemplo animación</p>
+</div>

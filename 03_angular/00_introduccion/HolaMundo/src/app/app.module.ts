@@ -15,6 +15,7 @@ registerLocaleData(localesAR) // Registramos el LOCALE_ID de 'es-AR' para poder 
 
 // Módulos Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 // Módulo personalizado que exporta componentes de tipo lista
 import { ListsModule } from './modules/lists/lists.module';
@@ -27,6 +28,7 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
 import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes.component';
 import { MultiplicaPipe } from './pipes/multiplica.pipe';
 import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
+import { EjemploAnimacionesComponent } from './components/ejemplo-animaciones/ejemplo-animaciones.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
     FormularioValidadoComponent,
     EjemploPipesComponent,
     MultiplicaPipe,
-    CalcularPuntuacionPipe
+    CalcularPuntuacionPipe,
+    EjemploAnimacionesComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     // Importamos los modulos de Angular Material que usamos en los formularios
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [
     // Registramos el Locale de es-AR para que los PIPES salgan en español

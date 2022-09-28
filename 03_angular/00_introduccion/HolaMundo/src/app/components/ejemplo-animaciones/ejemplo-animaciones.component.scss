@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.buttons {
+    display: flex;
+    gap:20px;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
