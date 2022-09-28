@@ -1,26 +1,45 @@
 :host {
     display: flex;
     flex-direction: column;
-    gap: 50px;
     align-items: center;
+    gap:40px
 }
 .user:hover {
     color: blue;
     cursor: pointer;
 }
 .grid {
+    width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    row-gap: 20px;
-    column-gap: 20px;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(
+            250px,
+            1fr
+        )
+    );
+    gap:16px;
+    .card {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        border: solid 1px #ccc;
+        padding: 10px;
+        border-radius: 4px;
+        gap: 15px;
+        .contact {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            gap: 15px;
+            .name {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
 }
-
-.grid > div {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.grid > div > img {
+img {
     border-radius: 100px;
 }

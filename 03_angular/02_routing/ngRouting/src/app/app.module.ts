@@ -21,6 +21,17 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { RandomUserComponent } from './components/random-user/random-user.component';
 import { RandomUserPageComponent } from './pages/random-user-page/random-user-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -34,7 +45,11 @@ import { RandomUserPageComponent } from './pages/random-user-page/random-user-pa
     LoginFormComponent,
     FullNamePipe,
     RandomUserComponent,
-    RandomUserPageComponent
+    RandomUserPageComponent,
+    NavigationComponent,
+    DashboardComponent,
+    TasksPageComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +60,14 @@ import { RandomUserPageComponent } from './pages/random-user-page/random-user-pa
     // Reactive Form Modules
     ReactiveFormsModule,
     // Customized Angular Material Model
-    MaterialModule
+    MaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,7 +27,7 @@ export class LoginPageComponent implements OnInit {
       (response) => {
         if(response.token){
           sessionStorage.setItem('token', '12h3jrufsdyiu')
-          this.router.navigate(['home'])
+          this.router.navigate(['dashboard'])
         }
       },
       (error) => console.error(`There was an error: ${error}`),
