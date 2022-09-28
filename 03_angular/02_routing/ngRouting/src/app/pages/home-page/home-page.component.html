@@ -1,4 +1,4 @@
-<h1>Invisible friend</h1>
+<h1>Invisible friend app</h1>
 <h3>Welcome!</h3>
 
 
@@ -7,19 +7,19 @@
 </ng-container>
 <ng-template #notSelected>
     <div>
-        <p>Choose your invisible friend!</p>
+        <p>Please navigate to contacts to select your Invisible Friend!</p>
     </div>
 </ng-template>
-
-<!-- Login -->
-<a *ngIf="!token" routerLink="/login">Login</a>
-
+<br>
+<br>
 <button mat-raised-button color="primary" (click)="navigateToContacts()">View all your contacts</button>
 <!-- <button mat-raised-button color="primary" (click)="navigateToRandomUser()">Generate random users</button> -->
 <br>
 <br>
-<div>
+<div class="filters">
     <p>Filters:</p>
-    <a [routerLink]="['/dashboard/contacts']" [queryParams]="{genderFilter: 'female'}">Women</a> | 
-    <a [routerLink]="['/dashboard/contacts']" [queryParams]="{genderFilter: 'male'}">Men</a>
+    <div>
+        <a [routerLink]="['/dashboard/contacts']" [queryParams]="{genderFilter: 'female'}">Women</a> |
+        <a [routerLink]="['/dashboard/contacts']" [queryParams]="{genderFilter: 'male'}">Men</a>
+    </div>
 </div>

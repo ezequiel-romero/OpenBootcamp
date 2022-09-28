@@ -15,6 +15,7 @@ import {MatIconRegistry} from '@angular/material/icon';
 export class ContactsPageComponent implements OnInit {
 
   genderFilter: string = 'all'
+  loading: boolean = true
   randomUserList: IRandomUser[] = []
   THUMBUP_ICON =
   `
@@ -51,10 +52,12 @@ export class ContactsPageComponent implements OnInit {
             response.results.forEach((randomUser: IRandomUser) => {
               this.randomUserList.push(randomUser)
             })
-            console.log(this.randomUserList)
           },
           error: (error) => console.error(`${error}`),
-          complete: () => console.info(`Random user petition ended`)
+          complete: () => {
+            console.info(`Random user petition ended`)
+            this.loading = false
+          }
         }
       )
       

@@ -4,6 +4,11 @@
     <p>Showing only {{ genderFilter }} friends</p>
 </div>
 
+<div *ngIf="loading">
+    <mat-spinner></mat-spinner>
+    <h5>Loading...</h5>
+</div>
+
 <div class="grid">
     <div class="card" *ngFor="let user of randomUserList; let i = index">
         <div class="contact">
