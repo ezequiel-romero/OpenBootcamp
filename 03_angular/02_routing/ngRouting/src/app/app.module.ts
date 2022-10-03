@@ -32,6 +32,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NavigationComponent,
     DashboardComponent,
     TasksPageComponent,
-    TaskListComponent
+    TaskListComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,

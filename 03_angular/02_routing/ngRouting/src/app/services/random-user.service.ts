@@ -35,7 +35,6 @@ export class RandomUserService {
     if (gender) {
       options = options.append('gender', gender)
     }
-    console.log(options, 'asdasdasdads');
     
     return this.http.get<Results>('https://randomuser.me/api', {params: options}).pipe(
       retry(2), // Retry number of petitions in case that something wrong happens

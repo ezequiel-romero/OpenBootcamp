@@ -1,0 +1,21 @@
+.list-item {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    box-sizing: border-box;
+    cursor: move;
+    color: rgb(101, 101, 101);
+    background: white;
+    font-size: 14px;
+}
+.list-item:last-child {
+    border: none;
+}
+.urgent {
+    color: rgb(170, 170, 0);
+}
+.blocking {
+    color: rgb(170, 0, 0);
+}
+.done {
+    color: green;
+}
