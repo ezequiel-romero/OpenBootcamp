@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ClockF = (props) => {
+const ClockF = () => {
 
     const dataInitialState = {
         fecha: new Date(),
@@ -13,19 +13,21 @@ const ClockF = (props) => {
 
     useEffect(() => {
         const timerID = setInterval(() => {
-            setData((prevState) => {
-                let edad = prevState.edad + 1;
-                return {
-                    ...prevState,
-                    fecha: new Date(),
-                    edad
-                }
-            })
+            updateData();
         }, 1000);
         return () => {
             clearInterval(timerID);
         };
-    }, []);
+    });
+
+    const updateData = () => {
+        return setData({
+            fecha: new Date(),
+            edad: data.edad + 1,
+            nombre: data.nombre,
+            apellidos: data.apellidos
+        })
+    }
 
     return (
         <div>
