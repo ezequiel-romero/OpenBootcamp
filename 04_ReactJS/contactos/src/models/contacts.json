@@ -1,0 +1,52 @@
+{
+	"results": [
+		{
+			"gender": "female",
+			"name": { "title": "Mrs", "first": "Conny", "last": "Kröger" },
+			"email": "conny.kroger@example.com",
+			"dob": { "date": "1958-01-17T04:33:57.258Z", "age": 64 },
+			"phone": "0074-0923992",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/33.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/33.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/33.jpg"
+			}
+		},
+		{
+			"gender": "female",
+			"name": { "title": "Miss", "first": "Minnie", "last": "Burton" },
+			"email": "minnie.burton@example.com",
+			"dob": { "date": "1975-05-18T12:18:38.874Z", "age": 47 },
+			"phone": "(577) 298-1353",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/women/17.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/women/17.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/women/17.jpg"
+			}
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Matias", "last": "Forland" },
+			"email": "matias.forland@example.com",
+			"dob": { "date": "1972-07-06T05:00:22.693Z", "age": 50 },
+			"phone": "28807859",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/86.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/86.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/86.jpg"
+			}
+		},
+		{
+			"gender": "male",
+			"name": { "title": "Mr", "first": "Santana", "last": "Oliveira" },
+			"email": "santana.oliveira@example.com",
+			"dob": { "date": "1982-07-14T00:42:41.398Z", "age": 40 },
+			"phone": "(63) 2893-0007",
+			"picture": {
+				"large": "https://randomuser.me/api/portraits/men/80.jpg",
+				"medium": "https://randomuser.me/api/portraits/med/men/80.jpg",
+				"thumbnail": "https://randomuser.me/api/portraits/thumb/men/80.jpg"
+			}
+		}
+	]
+}
