@@ -8,7 +8,8 @@ import './App.css';
 // import Ejemplo2 from './hooks/Ejemplo2';
 // import MiComponenteConContexto from './hooks/Ejemplo3';
 // import Greetingstyled from './components/pure/greetingStyled';
-import TaskListComponent from './components/container/task_list';
+// import TaskListComponent from './components/container/task_list';
+import OptionalRender from './components/pure/optionalRender';
 
 function App() {
   return (
@@ -19,9 +20,6 @@ function App() {
 
         {/* Componente de ejemplo funcional */}
         {/* <GreetingF name="Ezequiel"></GreetingF> */}
-
-        {/* Componente de listado de tareas */}
-        <TaskListComponent></TaskListComponent>
 
         {/* Ejemplo de uso de HOOKS */}
         {/* <Ejemplo1></Ejemplo1> */}
@@ -38,6 +36,11 @@ function App() {
         {/* <Clock></Clock> */}
         {/* <ClockF></ClockF> */}
       {/* </header> */}
+
+      {/* Componente de listado de tareas */}
+      {/* <TaskListComponent></TaskListComponent> */}
+
+      <OptionalRender></OptionalRender>
     </div>
   );
 }

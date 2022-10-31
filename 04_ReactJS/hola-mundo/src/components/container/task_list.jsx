@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { LEVELS } from '../../models/levels.enum';
 import { Task } from '../../models/task.class';
 import TaskForm from '../pure/forms/taskForm';
@@ -13,7 +14,7 @@ const TaskListComponent = () => {
 
     // Estado del componente
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
     //Control del ciclo de vida del componente
     // useEffect(() => {
