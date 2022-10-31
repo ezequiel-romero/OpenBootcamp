@@ -10,37 +10,39 @@ const Square = () => {
         backgroundColor: `rgb(${red},${green},${blue})`
     }
 
-    const [background, setBackground] = useState(backgroundInitial);
+    const [background, setBackground] = useState(backgroundInitial)
+    const [bgInterval, setBgInterval] = useState(0);
 
-    // Random number between 0 and 255
-    function randomIntFromInterval() {
-        return Math.floor(Math.random() * (255 - 0 + 1) + 0)
+    const randomNumber = () => {
+        return Math.floor(Math.random() * 256)
     }
 
-    const newBackground = () => {
-        const newRed = randomIntFromInterval()
-        const newGreen = randomIntFromInterval()
-        const newBlue = randomIntFromInterval()
+    const changeBackground = () => {
+        const newRed = randomNumber()
+        const newGreen = randomNumber()
+        const newBlue = randomNumber()
         const newBackground = {
             backgroundColor: `rgb(${newRed},${newGreen},${newBlue})`
         }
         setBackground(newBackground)
     }
 
-    const changeBackground = () => {
-        const myInterval = setInterval(newBackground, 500)
-        return myInterval
+    const startChangeBackground = () => {
+        return setBgInterval(setInterval(changeBackground,500))
     }
 
-    const stopChangeBackground = (myInterval) => {
-        clearInterval(myInterval)
-        setBackground(backgroundInitial)
+    const stopChangeBackground = () => {
+        return clearInterval(bgInterval)
     }
 
     return (
         <div>
-            <div className='square' onMouseEnter={changeBackground} style={background}></div>
-            <button onClick={stopChangeBackground}>Stop</button>
+            <div className='square'
+                onMouseEnter={startChangeBackground}
+                onMouseLeave={stopChangeBackground}
+                onDoubleClick={stopChangeBackground}
+                style={background}>
+            </div>
         </div>
     );
 }
