@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.square {
+  width: 255px;
+  height: 255px;
+}
