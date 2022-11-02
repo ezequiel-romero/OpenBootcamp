@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import LoginForm from './components/pure/forms/loginForm';
+import RegisterForm from './components/pure/forms/registerForm';
 // import Ejemplo4 from './hooks/Ejemplo4';
 // import Greeting from './components/pure/greeting';
 // import GreetingF from './components/pure/greetingF';
@@ -46,7 +47,9 @@ function App() {
       {/* <OptionalRender></OptionalRender> */}
 
       {/* Ejemplo de formulario con Formik */}
-      <LoginForm></LoginForm>
+      {/* <LoginForm></LoginForm> */}
+
+      <RegisterForm></RegisterForm>
     </div>
   );
 }
