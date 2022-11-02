@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import LoginForm from './components/pure/forms/loginForm';
-import RegisterForm from './components/pure/forms/registerForm';
+// import LoginForm from './components/pure/forms/loginForm';
+// import RegisterForm from './components/pure/forms/registerForm';
 // import Ejemplo4 from './hooks/Ejemplo4';
 // import Greeting from './components/pure/greeting';
 // import GreetingF from './components/pure/greetingF';
@@ -12,7 +12,7 @@ import RegisterForm from './components/pure/forms/registerForm';
 // import MiComponenteConContexto from './hooks/Ejemplo3';
 // import Greetingstyled from './components/pure/greetingStyled';
 // import OptionalRender from './components/pure/optionalRender';
-// import TaskListComponent from './components/container/task_list';
+import TaskListComponent from './components/container/task_list';
 
 function App() {
   return (
@@ -41,15 +41,14 @@ function App() {
       {/* </header> */}
 
       {/* Componente de listado de tareas */}
-      {/* <TaskListComponent></TaskListComponent> */}
+      <TaskListComponent></TaskListComponent>
 
       {/* Renderizado opcional */}
       {/* <OptionalRender></OptionalRender> */}
 
       {/* Ejemplo de formulario con Formik */}
       {/* <LoginForm></LoginForm> */}
-
-      <RegisterForm></RegisterForm>
+      {/* <RegisterForm></RegisterForm> */}
     </div>
   );
 }
