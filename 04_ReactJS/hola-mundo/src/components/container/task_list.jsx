@@ -1,5 +1,4 @@
-// import React, { useState, useEffect } from 'react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LEVELS } from '../../models/levels.enum';
 import { Task } from '../../models/task.class';
 import TaskForm from '../pure/forms/taskForm';
@@ -14,19 +13,19 @@ const TaskListComponent = () => {
 
     // Estado del componente
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     //Control del ciclo de vida del componente
-    // useEffect(() => {
-    //     console.log('Task State has been modified');
-    //     setLoading(false)
-    //     return () => {
-    //         console.log('TaskList Component is going to unmount');
-    //     };
-    // }, [tasks]);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)    
+        }, 2000);
+        return () => {
+            console.log('TaskList Component is going to unmount');
+        };
+    }, [tasks]);
 
-    function completeTask(task) {
-        console.log('Complete this task:', task)
+    const completeTask = (task) => {
         const index = tasks.indexOf(task)
         const tempTasks = [...tasks]
         tempTasks[index].completed = !tempTasks[index].completed
@@ -35,20 +34,59 @@ const TaskListComponent = () => {
         setTasks(tempTasks)
     }
 
-    function deleteTask(task) {
-        console.log('Delete this task:', task)
+    const deleteTask = (task) => {
         const index = tasks.indexOf(task)
         const tempTasks = [...tasks]
         tempTasks.splice(index, 1)
         setTasks(tempTasks)
     }
 
-    function addTask(task) {
-        console.log('Delete this task:', task)
+    const addTask = (task) => {
         const tempTasks = [...tasks]
         tempTasks.push(task)
         setTasks(tempTasks)
     }
+
+    const Table = () => {
+        return (
+            <table>
+                <thead>
+                    <tr>
+                        <th scope='col'>Title</th>
+                        <th scope='col'>Description</th>
+                        <th scope='col'>Priority</th>
+                        <th scope='col'>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    { tasks.map((task, index) => {
+                        return (
+                            <TaskComponent
+                                key={index}
+                                task={task}
+                                complete={completeTask}
+                                remove={deleteTask}>
+                            </TaskComponent>
+                        )
+                    }) }
+                </tbody>
+            </table>
+        )
+    }
+
+    let tasksTable
+
+    if (tasks.length > 0) {
+        tasksTable = <Table></Table>
+    } else {
+        tasksTable = (
+            <div>
+                <h5>There're no tasks on the list</h5>
+                <h6>Please create a new task below</h6>
+            </div>
+        )
+    }
+
 
     return (
         <div>
@@ -58,28 +96,7 @@ const TaskListComponent = () => {
                         <h5>Your tasks:</h5>
                     </div>
                     <div className='card-body' data-mdb-perfect-scrollbar='true' style={ {position: 'relative', heigh: '400px'} }>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope='col'>Title</th>
-                                    <th scope='col'>Description</th>
-                                    <th scope='col'>Priority</th>
-                                    <th scope='col'>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                { tasks.map((task, index) => {
-                                    return (
-                                        <TaskComponent
-                                            key={index}
-                                            task={task}
-                                            complete={completeTask}
-                                            remove={deleteTask}>
-                                        </TaskComponent>
-                                    )
-                                }) }
-                            </tbody>
-                        </table>
+                        { loading ? <p>Loading...</p> : tasksTable }
                     </div>
                 </div>
             </div>
